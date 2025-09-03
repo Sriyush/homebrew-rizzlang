@@ -11,7 +11,6 @@ class Rizzlang < Formula
     bin.install "rizz"
   end
 
-
   test do
     system "#{bin}/rizz", "--version"
   end
