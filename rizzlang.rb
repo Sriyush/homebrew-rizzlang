@@ -2,8 +2,8 @@ class Rizzlang < Formula
   desc "Rizz++ - small GenZ-style toy language"
   homepage "https://github.com/Sriyush/RizzLang"
   url "https://github.com/Sriyush/RizzLang/releases/download/v1.0.12/rizz"
-  sha256 "fdcfd377e5168396b1dca7505bad2a9e0568ced53ff1896896d621dc8811addc"
-  version "1.0.12"
+  sha256 "f76dee4dcb874fbc8ea6dab094ee60771f8c2432fa3b841631c989ba8db1f78f"
+  version "1.0.14"
 
   def install
     bin.install "rizz"
