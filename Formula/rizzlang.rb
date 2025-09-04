@@ -1,7 +1,7 @@
 class Rizzlang < Formula
   desc "Rizz++ - small GenZ-style toy language"
   homepage "https://github.com/Sriyush/RizzLang"
-  url "https://github.com/Sriyush/RizzLang/archive/refs/tags/v1.0.16.tar.gz"
+  url "https://github.com/Sriyush/RizzLang/archive/refs/tags/v1.0.17.tar.gz"
   sha256 "d9af95a6cbe8cf2ae9078bb0315acefb6e6c6569da305594a3e32c9197bfbef4"
   license "MIT"
   head "https://github.com/Sriyush/RizzLang.git", branch: "main"
