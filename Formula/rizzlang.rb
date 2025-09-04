@@ -14,10 +14,11 @@ class Rizzlang < Formula
   depends_on "cmake" => :build
 
   def install
-    ENV["CC"] = Formula["gcc"].opt_bin/"gcc-15"
-    ENV["CXX"] = Formula["gcc"].opt_bin/"g++-15"
+    gcc = Formula["gcc"]
+    ENV["CC"] = gcc.opt_bin/"gcc-15"
+    ENV["CXX"] = gcc.opt_bin/"g++-15"
 
-    ENV["LDFLAGS"] = "-Wl,-rpath,#{Formula["gcc"].opt_lib}"
+    ENV["LDFLAGS"] = "-Wl,-rpath,#{gcc.opt_lib}"
 
     mkdir "build" do
       system "cmake", "..", *std_cmake_args
