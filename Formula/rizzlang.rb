@@ -17,7 +17,7 @@ class Rizzlang < Formula
     ENV["CC"] = Formula["gcc"].opt_bin/"gcc-15"
     ENV["CXX"] = Formula["gcc"].opt_bin/"g++-15"
 
-    ENV["LDFLAGS"] = "-Wl,-rpath,#{Formula[gcc].opt_lib}"
+    ENV["LDFLAGS"] = "-Wl,-rpath,#{Formula["gcc"].opt_lib}"
 
     mkdir "build" do
       system "cmake", "..", *std_cmake_args
