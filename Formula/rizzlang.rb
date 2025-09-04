@@ -1,21 +1,21 @@
 class Rizzlang < Formula
   desc "Rizz++ - small GenZ-style toy language"
   homepage "https://github.com/Sriyush/RizzLang"
-  if OS.mac?
-    url "https://github.com/Sriyush/RizzLang/releases/download/v1.0.16/rizz-macos"
-    sha256 "f76dee4dcb874fbc8ea6dab094ee60771f8c2432fa3b841631c989ba8db1f78f"
-  elsif OS.linux?
-    url "https://github.com/Sriyush/RizzLang/releases/download/v1.0.16/rizz-linux"
-    sha256 "0042bc8eebddc4ef9578aec85e3f8cd0f30c3e69caf6c3f4a3a17431330750d0"
-  end
+  url "https://github.com/Sriyush/RizzLang/archive/refs/tags/v1.0.16.tar.gz"
+  sha256 "b27276deccee8fc78334e08d6c201e46552d5efb6ed07dc0d9e424df1726ba38"
   license "MIT"
+  head "https://github.com/Sriyush/RizzLang.git", branch: "main"
+
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f76dee4dcb874fbc8ea6dab094ee60771f8c2432fa3b841631c989ba8db1f78f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0042bc8eebddc4ef9578aec85e3f8cd0f30c3e69caf6c3f4a3a17431330750d0"
+  end
+
+  depends_on "cmake" => :build
 
   def install
-    if OS.mac?
-      bin.install "rizz-macos" => "rizz"
-    elsif OS.linux?
-      bin.install "rizz-linux" => "rizz"
-    end
+    system "cmake", ".", *std_cmake_args
+    system "make", "install"
   end
 
   test do
