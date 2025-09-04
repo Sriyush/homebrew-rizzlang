@@ -12,7 +12,8 @@ class Rizzlang < Formula
   end
 
   depends_on "cmake" => :build
-
+  depends_on "gcc" => :build
+  
   def install
     mkdir "build" do
       system "cmake", "..", *std_cmake_args
