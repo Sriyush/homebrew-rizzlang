@@ -10,8 +10,8 @@ class Rizzlang < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0042bc8eebddc4ef9578aec85e3f8cd0f30c3e69caf6c3f4a3a17431330750d0"
   end
 
-  depends_on "gcc"
   depends_on "cmake" => :build
+  depends_on "gcc"
 
   def install
     ENV["CC"] = Formula["gcc"].opt_bin/"gcc-15"
