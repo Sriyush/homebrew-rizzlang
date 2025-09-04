@@ -8,7 +8,7 @@ class Rizzlang < Formula
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_monterey: "f76dee4dcb874fbc8ea6dab094ee60771f8c2432fa3b841631c989ba8db1f78f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "0042bc8eebddc4ef9578aec85e3f8cd0f30c3e69caf6c3f4a3a17431330750d0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0042bc8eebddc4ef9578aec85e3f8cd0f30c3e69caf6c3f4a3a17431330750d0"
   end
 
   depends_on "cmake" => :build
