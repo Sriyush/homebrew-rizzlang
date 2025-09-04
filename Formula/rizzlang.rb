@@ -12,9 +12,12 @@ class Rizzlang < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "gcc" => :build
-  
+  depends_on "gcc"   => :build   # 👈 ensure GCC is used
+
   def install
+    ENV["CC"] = Formula["gcc"].opt_bin/"gcc-15"
+    ENV["CXX"] = Formula["gcc"].opt_bin/"g++-15"
+
     mkdir "build" do
       system "cmake", "..", *std_cmake_args
       system "make", "install"
